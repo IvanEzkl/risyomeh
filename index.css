@@ -72,7 +72,7 @@
             padding: 50px;
             gap: 40px;
             flex-wrap: wrap;
-            padding-bottom: 700px;
+            padding-bottom: 200px;
         }
 
         .hero-img {
@@ -376,46 +376,100 @@
 
 
 /* Breakpoints */
-@media (max-width: 500px) {
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      'header header header header header header'
-      'menu menu menu menu menu menu'
-      'main main main main main main'
-      'right right right right right right'
-      'footer footer footer footer footer footer';
-    gap: 15px;
-    padding: 15px;
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    padding: 0;
   }
-  .nav-links {
-    display: none;
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px 5vw;
+    gap: 10px;
   }
-  .item1 {
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px 5vw 40px 5vw;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  .hero-img img {
+    width: 90vw;
+    height: auto;
+    max-width: 350px;
+    max-height: 400px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .badges {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-}
 
-@media (min-width: 600px) and (max-width: 1300px) {
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      'header header header header header header'
-      'menu main main main main main'
-      'right right right right right right'
-      'footer footer footer footer footer footer';
+  .skills {
+    padding: 30px 5vw;
   }
-  .item3 {
-    padding: 1.5rem;
-  }
-}
 
-@media (min-width: 500px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: 200px 1fr 300px;
+  .skills-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
-  .item3 {
-    min-height: calc(100vh - 200px);
+
+  .skill-card {
+    width: 90vw;
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .projects {
+    padding: 1rem 2vw;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .project-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .footer {
+    padding: 20px 5vw;
+  }
+
+  .footer-container {
+    gap: 10px;
+  }
+
+  .footer-logo img {
+    max-width: 100px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .social-link img {
+    width: 24px;
+    height: 24px;
   }
 }
