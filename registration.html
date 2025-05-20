@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Ivan.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .gradient-custom {
+      background: linear-gradient(to right, #407C87, #A5DBDD, #EEF1F6, #D3E1E2);
+    }
+
+    .btn-custom {
+      background-color: #407C87;
+      color: white;
+    }
+
+    .btn-custom:hover {
+      background-color: #2e5e66;
+      color: white;
+    }
+
+    . {
+        background-color: #407C87;
+    }
+  </style>
+</head>
+
+<body class="gradient-custom">
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-lg" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <h3 class="mb-4">Register</h3>
+              <form id="registerForm">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="username" placeholder="Username" required />
+                  <label for="username">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
+                  <label for="email">Email address</label>
+                </div>
+                <div class="form-floating mb-4">
+                  <input type="password" class="form-control" id="password" placeholder="Password" required />
+                  <label for="password">Password</label>
+                </div>
+                <button class="btn btn-custom btn-lg w-100 mb-3" type="submit">Register</button>
+                <p class="mb-0">Already have an account?
+                    <a href="login.html" class="fw-bold" style="color: #407C87;">Login</a>
+                  </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+  
+      // Basic validation
+      if (username.length < 3) {
+        alert("Username must be at least 3 characters long.");
+        return;
+      }
+  
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+  
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+  
+      // Simulate registration success
+      alert(`Registration successful!\nUsername: ${username}\nEmail: ${email}`);
+      window.location.href = `login.html`;
+    });
+  </script>
+  
+</body>
+
+</html>
